@@ -10,6 +10,7 @@ import tkinter
 from tkinter import ttk
 from tkinter.filedialog import *
 from tkinter import messagebox
+from tkinter.constants import N, S, E, W
 from collections import Counter, OrderedDict
 import xlsxwriter
 import chardet
