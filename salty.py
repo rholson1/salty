@@ -36,7 +36,7 @@ class SaltyShuffler:
 
         self.edits = {}
 
-        self.root = Tk()
+        self.root = tkinter.Tk()
         self.root.title('Edit alignment of SALT files')
         self.root.rowconfigure(0, weight=1)
         self.root.columnconfigure(0, weight=1)
@@ -192,7 +192,7 @@ class SaltyEditor:
 
         self.edits = {}
 
-        self.root = Tk()
+        self.root = tkinter.Tk()
         self.root.title('Edit SALT comparison')
         self.root.rowconfigure(0, weight=1)
         self.root.columnconfigure(0, weight=1)
