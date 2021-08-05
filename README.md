@@ -3,6 +3,9 @@
 
 Compute inter-rater reliability by comparing SALT files.
 
+## Dependencies
+Salty depends on the packages `chardet` and `xlsxwriter`.
+
 
 ## Usage
 
