@@ -14,6 +14,7 @@ from tkinter.constants import N, S, E, W
 from collections import Counter, OrderedDict
 import xlsxwriter
 import chardet
+import os.path
 
 USE_EDITOR = True
 USE_SHUFFLER = True
@@ -126,7 +127,7 @@ class SaltyShuffler:
         self.last_op = None
 
     def cut_cell(self, event):
-        if self.tree.selection():
+        if self.tree.selection() and self.current_col != '#0':
             self.last_op = self.OPS.CUT
             self.clipboard = [self.tree.set(item, self.current_col) for item in self.tree.selection()]
             self.clipboard_col = self.current_col
@@ -619,6 +620,10 @@ class SaltComparator:
 
     def write_xlsx(self):
         # Create xlsx file to support dynamic formulas
+
+        # append .xlsx file extension if not present
+        if os.path.splitext(self.output)[1].lower() != '.xlsx':
+            self.output += '.xlsx'
 
         if TRACK_PAUSE:
             colkeys = ['utt_seg', 'XX', '^or>', '()', '<>', ':', '# morphs', '# words', 'word ID', 'end punct']
